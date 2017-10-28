@@ -7,3 +7,4 @@
              - nano
              - wget
              - sendmail
+             - lvm2
