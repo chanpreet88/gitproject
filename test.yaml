@@ -8,3 +8,4 @@
              - wget
              - sendmail
              - lvm2
+             - firefox
