@@ -1,0 +1,11 @@
+---
+ - hosts: group1
+   tasks:
+       - name: vgcreate
+         lvg: vg=app_vg pvs=/dev/sda
+       - name: lvcreate
+         lvol: vg=app_vg lv=app_lv size=1G
+       - name: create filesystem
+         filesystem: dev=/dev/app_vg/app_lv fstype=ext4
+       - name: mount the file system and make an entry in fstab
+         mount: name=/app src=/dev/app_vg/app_lv fstype=ext4 state=mounted
